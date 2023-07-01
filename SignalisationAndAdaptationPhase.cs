@@ -20,7 +20,7 @@ namespace The_SAP_Algorithm
     //<summary>
     public class SingalisationAndAdaptationPhase
     {
-        public static bool Encrypted = false;
+        private static bool Encrypted = false;
         static void Main(string[] args)
         {
             IDictionary<int, ServerAdmin> sensitiveData = new Dictionary<int, ServerAdmin>
