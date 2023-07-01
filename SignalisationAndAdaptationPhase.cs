@@ -1,16 +1,13 @@
 using System.Security.Cryptography;
-using The_BCSAP_Algorithm;
+using The_BCSAP_Method;
 
-namespace The_SAP_Algorithm
+namespace The_SAP_Method
 {
     //<summary>
-    // Name: The SAP Algorithm 
+    // Name: The SAP Method
     // Creator: Hami Ibriyamov 
-    // The Signalization Adaptation Prevention Algorithm
-    // or SAP Algorithm is designed to adapt a collection 
-    // to outer harmful influence to the contents of said 
-    // collection 
-    /* For example: A copy of a collection of  sensitive data that is accessible through the public class is about to be hijacked. The SAP Algorithm prevents that by modifying the collection to unreadable,uncrackable encryption and the algorithm itself can only decipher the encrypted data. When the SAP Algorithm encrypts 
+    /* The Signalization Adaptation Prevention Method or SAP Method is designed to adapt a collection to outer harmful influence to the contents of said collection*/
+    /*For example: A copy of a collection of  sensitive data that is accessible through the public class is about to be hijacked. The SAP Method prevents that by modifying the collection to unreadable,uncrackable encryption and the method itself can only decipher the encrypted data. When the SAP Method encrypts 
 the data, a copy of the decrypted data is created and sent to the specified administrator in case of loss of data*/ 
     //<summary>
     public class SingalisationAndAdaptationPhase
@@ -65,12 +62,12 @@ the data, a copy of the decrypted data is created and sent to the specified admi
                         }
                      
                     }
-                    // else, the SAP Algorithm signalizes for a potential security breach and encrypts the data momentarily
+                    // else, the SAP Method signalizes for a potential security breach and encrypts the data momentarily
                     else if(LoginAttempts > 3)
                     {
                         // SIGNALIZATION PHASE
                         // <summary>
-                        // In this phase the SAP Algorithm is triggered if it deems a security breach is plausible
+                        // In this phase the SAP Method is triggered if it deems a security breach is plausible
                         // due to the many failed attempts to log in as a server administrator and get access to sensitive data
                         // <summary>
 
