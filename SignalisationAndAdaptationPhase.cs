@@ -14,8 +14,11 @@ namespace The_SAP_Method
         static void Main(string[] args)
         {
             Dictionary<int, string> sensitiveData = new Dictionary<int, string>();
-            sensitiveData = ServerAdmin.GetData(sensitiveData);
-            // For the example's sake the sensitive data is retrieved without security
+            sensitiveData = ServerAdmin.GetData("CloudJumper", "123", sensitiveData);
+            // For the example's sake the server administrator's username and password are given to the 
+            // get method in order to retrieve a copy of the sensitive data beforehand 
+            // (Simulating a logged in administrator working on the collection of data)
+            
             var LoginAttempts = 0;
 
             while (true)
