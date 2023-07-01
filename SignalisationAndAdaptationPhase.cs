@@ -87,14 +87,14 @@ namespace The_SAP_Method
                 }
             }
         }
-       private static void passPhraseGenerator(IDictionary<int, string> data)
+       private static Dictionary<int, string> passPhraseGenerator(Dictionary<int, string> data)
        {
             // ADAPTATION PHASE
             // <summary>
             // Following immediately after the Signalization phase, the adaptation phase creates a custom password phrase
             // used in the encryption and decryption of the sensitive data. After the custom password is created, the Prevention phase ensues.
             // <summary>
-
+            Dictionary<int, string> mockData = new Dictionary<int, string>();
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             int length = (int)Math.Pow(data.Count(), data.Count());
             var charArray = new char[length];
@@ -105,16 +105,17 @@ namespace The_SAP_Method
             }
             string passPhrase = new string(charArray);
 
-            ICollection<string> encryptedPasses = new List<string>();
             foreach (int index in Enumerable.Range(1, data.Count()))
             {
                 string encryptInfo = PreventionPhase.Encrypt(index, data[index].ToString(), passPhrase);
-                encryptedPasses.Add(encryptInfo);
+                mockData.Add(index, encryptInfo);
+                
             }
             Console.WriteLine("Personal data successfully encrypted!");
 
             //Console.WriteLine(string.Join("", encryptedPasses));
             // Uncomment to see encrypted data
+            return mockData;
         }
     }
 }
