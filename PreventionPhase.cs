@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace The_BCSAP_Algorithm
+namespace The_BCSAP_Method
 {
     internal class PreventionPhase
     {
