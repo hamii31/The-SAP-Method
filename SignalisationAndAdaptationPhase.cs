@@ -20,7 +20,7 @@ the data, a copy of the decrypted data is created and sent to the specified admi
         {
             Dictionary<int, string> sensitiveData = new Dictionary<int, string>();
             sensitiveData = ServerAdmin.GetData(sensitiveData);
-            // For example's sake the "sensitive data" is public
+            // For the example's sake the "sensitive data" is public
             var LoginAttempts = 0;
 
             while (true)
