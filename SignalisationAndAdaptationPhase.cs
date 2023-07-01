@@ -15,7 +15,7 @@ namespace The_SAP_Method
         {
             Dictionary<int, string> sensitiveData = new Dictionary<int, string>();
             sensitiveData = ServerAdmin.GetData(sensitiveData);
-            // For the example's sake the "sensitive data" is public
+            // For the example's sake the sensitive data is retrieved without security
             var LoginAttempts = 0;
 
             while (true)
