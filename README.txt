@@ -1,5 +1,6 @@
 Name: The SAP Method 
 Creator: Hami Ibriyamov 
+Date: July 1st 2023
     
 The Signalization Adaptation Prevention Method or SAP Method (for short) is designed to protect a collection of sensitive data to an attack by encrypting the sensitive data with a custom, semi - random generated key. The copy of the decrypted data is accessible only by an authorized personel, no one else can access it directly without authentication and authorization. 
 
