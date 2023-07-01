@@ -23,14 +23,9 @@ namespace The_SAP_Algorithm
         private static bool Encrypted = false;
         static void Main(string[] args)
         {
-            IDictionary<int, ServerAdmin> sensitiveData = new Dictionary<int, ServerAdmin>
-            {
-                {1, new ServerAdmin{ SuperSecretInfo = "Xa@fj@Sd"} },
-                {2, new ServerAdmin{ SuperSecretInfo = "KSDJkk@23" } },
-                {3, new ServerAdmin{ SuperSecretInfo = "S244qWES"} }
-            };
+            Dictionary<int, string> sensitiveData = new Dictionary<int, string>();
+            sensitiveData = ServerAdmin.GetData(sensitiveData);
             // For example's sake the "sensitive data" is public
-
             var LoginAttempts = 0;
 
             while (true)
@@ -70,7 +65,7 @@ namespace The_SAP_Algorithm
                         {
                             foreach (var index in Enumerable.Range(1, sensitiveData.Count()))
                             {
-                                Console.WriteLine($"User {index}'s super secret info is {sensitiveData[index].SuperSecretInfo}");
+                                Console.WriteLine($"User {index}'s super secret info is {sensitiveData[index]}");
                             }
                         }
                      
@@ -99,7 +94,7 @@ namespace The_SAP_Algorithm
                 }
             }
         }
-       private static void passPhraseGenerator(IDictionary<int, ServerAdmin> data)
+       private static void passPhraseGenerator(IDictionary<int, string> data)
        {
             // ADAPTATION PHASE
             // <summary>
@@ -120,10 +115,13 @@ namespace The_SAP_Algorithm
             ICollection<string> encryptedPasses = new List<string>();
             foreach (int index in Enumerable.Range(1, data.Count()))
             {
-                string encryptInfo = PreventionPhase.Encrypt(index, data[index].SuperSecretInfo, passPhrase);
+                string encryptInfo = PreventionPhase.Encrypt(index, data[index].ToString(), passPhrase);
                 encryptedPasses.Add(encryptInfo);
             }
             Console.WriteLine("Personal data successfully encrypted!");
+
+            //Console.WriteLine(string.Join("", encryptedPasses));
+            // Uncomment to see encrypted data
         }
     }
 }
