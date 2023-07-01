@@ -44,16 +44,17 @@ namespace The_SAP_Method
                     LoginAttempts++;
 
                     // if the password and username are equal to a server administrator, you get access to the data
-                    if (ServerAdmin.IsAdmin(username, password)) 
+                     if (ServerAdmin.IsAdmin(username, password)) 
                     {
-                        LoginAttempts = 0;
-                        // if the data was encrypted beforehand and the credentials given are correct, the data gets decrypted
-                        if (Encrypted)
+                        //<summary>
+                        // If there is a successful identity theft attack the hacker would only have access to the 
+                        // encrypted data. If there was no suspicion of an identity theft attack, the data wouldn't
+                        // be encrypted in the first place.
+                        if (Encrypted && LoginAttempts == 0)
                         {
                             ServerAdmin.Show(username, password);
                             Encrypted = false;
                         }
-                        // else, show the sensitive data to the authorized person 
                         else
                         {
                             foreach (var index in Enumerable.Range(1, sensitiveData.Count()))
@@ -61,7 +62,6 @@ namespace The_SAP_Method
                                 Console.WriteLine($"User {index}'s super secret info is {sensitiveData[index]}");
                             }
                         }
-                     
                     }
                     // else, the SAP Method signalizes for a potential security breach and encrypts the data momentarily
                     else if(LoginAttempts > 3)
