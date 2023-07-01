@@ -57,9 +57,12 @@ namespace The_BCSAP_Method
                 Console.WriteLine($"User {pair.Key}'s super secret info is {pair.Value}!");
             }
         }
-        public static Dictionary<int, string> GetData(Dictionary<int, string> dict)
+         public static Dictionary<int, string> GetData(string username, string password, Dictionary<int, string> dict)
         {
-            dict = SendData(dict);
+            if (username == ServerAdminUsername && password == ServerAdminPassword)
+            {
+                dict = SendData(dict);
+            }
             return dict;
         }
         private static Dictionary<int, string> SendData(Dictionary<int, string> data)
