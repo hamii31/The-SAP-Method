@@ -1,6 +1,6 @@
 using System.Collections.Immutable;
 
-namespace The_BCSAP_Algorithm
+namespace The_BCSAP_Method
 {
     internal class ServerAdmin
     {
