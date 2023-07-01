@@ -29,6 +29,8 @@ namespace The_SAP_Algorithm
                 {2, new ServerAdmin{ SuperSecretInfo = "KSDJkk@23" } },
                 {3, new ServerAdmin{ SuperSecretInfo = "S244qWES"} }
             };
+            // For example's sake the "sensitive data" is public
+
             var LoginAttempts = 0;
 
             while (true)
